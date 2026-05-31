@@ -32,16 +32,6 @@ echo "==> Packaging apworld"
         --exclude "lethal_company/test/*")
 echo "    → dist/lethal_company.apworld"
 
-# ── 4. YAML template ────────────────────────────────────────────────────────
-YAML_SRC=$(find "$REPO_ROOT" -maxdepth 1 -iname "lethal_company.yaml" | head -1)
-if [[ -n "$YAML_SRC" ]]; then
-    echo "==> Copying YAML template"
-    cp "$YAML_SRC" "$DIST/lethal_company.yaml"
-    echo "    → dist/lethal_company.yaml"
-else
-    echo "==> Skipping YAML template (not found at repo root)"
-fi
-
 echo ""
 echo "Build complete. Artifacts in dist/:"
 ls -lh "$DIST"
